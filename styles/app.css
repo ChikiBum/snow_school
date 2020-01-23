@@ -1,0 +1,514 @@
+* {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0px; }
+
+.container2 {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0px; }
+
+/* Ba-grid  */
+.ob-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-right: 0px; }
+
+.ob-row + .ob-row {
+  margin-top: 1rem; }
+
+[class^="ba-col"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
+
+.ob-col-1 {
+  width: 8.33333%; }
+
+.ob-col-2 {
+  width: 16.66667%; }
+
+.ob-col-3 {
+  width: 25%; }
+
+.ob-col-4 {
+  width: 33.33333%; }
+
+.ob-col-5 {
+  width: 41.66667%; }
+
+.ob-col-6 {
+  width: 50%; }
+
+.ob-col-7 {
+  width: 58.33333%; }
+
+.ob-col-8 {
+  width: 66.66667%; }
+
+.ob-col-9 {
+  width: 75%; }
+
+.ob-col-10 {
+  width: 83.33333%; }
+
+.ob-col-11 {
+  width: 91.66667%; }
+
+.ob-col-12 {
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .ob-col-sm-12 {
+    width: 100%; }
+  .ob-col-sm-11 {
+    width: 91.66%; }
+  .ob-col-sm-10 {
+    width: 83.3%; }
+  .ob-col-sm-9 {
+    width: 74.97%; }
+  .ob-col-sm-8 {
+    width: 66.62%; }
+  .ob-col-sm-7 {
+    width: 58.3%; }
+  .ob-col-sm-6 {
+    width: 50%; }
+  .ob-col-sm-5 {
+    width: 41.65%; }
+  .ob-col-sm-4 {
+    width: 33.3%; }
+  .ob-col-sm-3 {
+    width: 24.98%; }
+  .ob-col-sm-2 {
+    width: 16.66%; }
+  .ob-col-sm-1 {
+    width: 8.33%; } }
+
+@media screen and (min-width: 991px) {
+  .ob-col-md-12 {
+    width: 100%; }
+  .ob-col-md-11 {
+    width: 91.66%; }
+  .ob-col-md-10 {
+    width: 83.3%; }
+  .ob-col-md-9 {
+    width: 74.97%; }
+  .ob-col-md-8 {
+    width: 66.62%; }
+  .ob-col-sm-7 {
+    width: 58.3%; }
+  .ob-col-md-6 {
+    width: 50%; }
+  .ob-col-md-5 {
+    width: 41.65%; }
+  .ob-col-md-4 {
+    width: 33.3%; }
+  .ob-col-md-3 {
+    width: 24.98%; }
+  .ob-col-md-2 {
+    width: 16.66%; }
+  .ob-col-md-1 {
+    width: 8.33%; }
+  .hidden-md {
+    display: none !important; } }
+
+@media screen and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important; } }
+
+/* ba-common */
+.ob-text-center {
+  text-align: center; }
+
+.ob-text-left {
+  text-align: left; }
+
+.ob-text-right {
+  text-align: right; }
+
+.ob-text-justify {
+  text-align: justify; }
+
+body {
+  font-family: "Muli", sans-serif;
+  position: relative; }
+
+.ob-btn {
+  display: inline-flex;
+  background-color: #ff690f;
+  color: #fff;
+  border: 1px solid currentColor;
+  height: 2.5rem;
+  width: 13.5rem;
+  border-radius: 0.8rem;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 0 1em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  outline: none; }
+  .ob-btn__arrow {
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid currentColor; }
+  .ob-btn:hover {
+    color: aquamarine;
+    font-size: 0.895rem;
+    border: 1px solid aquamarine;
+    background-color: #ff9d62; }
+  .ob-btn:active {
+    background-color: #ee5900; }
+
+.ob-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 119px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; }
+  .ob-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden; }
+
+.ob-menu {
+  display: flex;
+  align-items: center;
+  list-style: none; }
+  .ob-menu__item {
+    position: relative; }
+  .ob-menu__item + .ob-menu__item {
+    margin-left: 40px; }
+  .ob-menu__link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    transition: opacity 0.4s;
+    outline-color: yellowgreen; }
+    .ob-menu__link:hover {
+      opacity: 0.75; }
+
+.ob-hero {
+  position: relative;
+  min-height: calc(100vh - 119px);
+  height: 100vh;
+  width: 100%;
+  background-color: #2e5386;
+  background: url(../img/header_background.jpg) no-repeat;
+  background-size: cover;
+  padding: 15vh 0;
+  margin: 0 auto;
+  overflow: hidden; }
+  .ob-hero__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: rgba(254, 254, 254, 0.4);
+    font-size: 30px;
+    margin: 0;
+    padding: 0; }
+    .ob-hero__title-desc {
+      text-align: center;
+      font-family: "Catamaran", sans-serif;
+      text-transform: uppercase;
+      color: rgba(254, 254, 254, 0.4);
+      font-size: 245px;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 10%;
+      padding: 0;
+      line-height: 100%; }
+      .ob-hero__title-desc p {
+        margin: 0;
+        padding: 0;
+        line-height: 100%; }
+  .ob-hero__wrapper {
+    position: relative;
+    z-index: 15; }
+  .ob-hero_desc {
+    display: block;
+    font-family: "Catamaran", sans-serif;
+    color: white;
+    font-size: 24px;
+    padding-right: 40%;
+    margin-bottom: 5%; }
+  .ob-hero__boarder {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    z-index: 10;
+    width: auto;
+    height: 62vh; }
+  .ob-hero__mountains {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    z-index: 5;
+    width: 100%;
+    height: 62vh; }
+  .ob-hero__heel {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    z-index: 5; }
+
+.ob-offer {
+  padding: 5% 0;
+  background-color: #f7f7f7; }
+  .ob-offer__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.75rem;
+    padding: 0;
+    margin-top: 0; }
+  .ob-offer__desc {
+    display: block;
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.4);
+    font-size: 1.425rem;
+    line-height: 2rem;
+    margin-bottom: 4rem; }
+  .ob-offer__cont-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+  .ob-offer__img {
+    height: 100%;
+    width: auto; }
+    .ob-offer__img-wrapper {
+      height: 25vh; }
+  .ob-offer__span {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: rgba(7, 7, 7, 0.8);
+    font-size: 0.875rem;
+    margin-top: 2rem; }
+  .ob-offer__h3 {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0 15%; }
+  .ob-offer__btn {
+    width: 10rem; }
+
+.ob-photo {
+  overflow: hidden; }
+  .ob-photo__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+  .ob-photo__img {
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover; }
+    .ob-photo__img:hover {
+      border: 1px solid #ff690f; }
+
+.ob-crew {
+  display: block;
+  min-height: 50vh;
+  height: auto;
+  padding: 5% 0;
+  background-color: #f7f7f7; }
+  .ob-crew__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.75rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5%; }
+  .ob-crew__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    height: auto; }
+  .ob-crew__cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    height: auto; }
+    .ob-crew__cont-img-wrap {
+      border-radius: 50%;
+      width: auto;
+      height: 15rem;
+      transition: 0.8s; }
+      .ob-crew__cont-img-wrap:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background-color: #ada4a4; }
+  .ob-crew__img {
+    display: block;
+    width: auto;
+    height: 15rem;
+    object-fit: cover; }
+    .ob-crew__img:hover {
+      border: 6px solid #ff690f; }
+  .ob-crew__span {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: rgba(7, 7, 7, 0.8);
+    font-size: 0.875rem; }
+  .ob-crew__name {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(7, 7, 7, 0.9);
+    font-size: 1.5rem; }
+
+.ob-mountain {
+  min-height: 100vh;
+  background-color: #76a4e6;
+  background: url(../img/maontane_bc.jpg) no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .ob-mountain__cont {
+    padding: 14% 30% 15% 0; }
+  .ob-mountain__title {
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold;
+    line-height: 4.75rem; }
+  .ob-mountain__descr {
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.9);
+    font-size: 1.125rem;
+    line-height: 2rem; }
+  .ob-mountain__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%; }
+  .ob-mountain__count {
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+    color: #ff660d;
+    font-weight: 700; }
+    .ob-mountain__count-descr {
+      display: block;
+      text-align: left;
+      font-size: 1.125rem;
+      color: black; }
+
+.ob-testemotional {
+  overflow: hidden;
+  min-height: 70vh;
+  padding: 5% 0;
+  margin: 0;
+  text-align: center;
+  margin: auto;
+  background-color: #f7f7f7; }
+  .ob-testemotional__title {
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold; }
+  .ob-testemotional__wrapper {
+    width: 100wh; }
+  .ob-testemotional__img-wrapper {
+    display: inline-block;
+    border-radius: 50%; }
+  .ob-testemotional__name {
+    display: block;
+    padding: 1% 30%;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+  .ob-testemotional__descr {
+    display: block;
+    padding: 1% 25%;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.9);
+    font-size: 1.125rem;
+    line-height: 2rem; }
+
+.slick-dots li button:before {
+  opacity: 0.2;
+  font-size: 1.2rem; }
+
+.slick-dots li.slick-active button:before {
+  opacity: 7.75;
+  font-size: 1.2rem;
+  color: #ff660d; }
+
+.slick-dots {
+  bottom: 10%; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0; }
+
+.ob-footer {
+  display: flex;
+  overflow: hidden;
+  background-color: #2f2f2f; }
+  .ob-footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3rem 6rem; }
+  .ob-footer__title {
+    color: white;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0; }
+  .ob-footer__info-section .far,
+  .ob-footer__info-section .fas {
+    color: #ff660d;
+    font-size: 1.125rem;
+    width: 2rem; }
+  .ob-footer__info-section span {
+    font-family: "Muli", sans-serif;
+    font-weight: 400;
+    color: #f7f7f7;
+    font-size: 1.125rem;
+    line-height: 2rem; }
+  .ob-footer__social {
+    width: 25%;
+    display: flex;
+    justify-content: space-between; }
+    .ob-footer__social-link {
+      color: #ff660d;
+      font-size: 2.125rem; }
+  .ob-footer__map {
+    background-color: #fff;
+    flex-grow: 1;
+    height: 40rem; }

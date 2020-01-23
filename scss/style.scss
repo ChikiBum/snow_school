@@ -1,0 +1,518 @@
+body {
+  font-family: "Muli", sans-serif;
+  position: relative;
+}
+
+.ob-btn {
+  display: inline-flex;
+  background-color: #ff690f;
+  color: #fff;
+  border: 1px solid currentColor; //currentColor - наследует цвет текста єлемента
+  height: 2.5rem;
+  width: 13.5rem;
+  border-radius: 0.8rem;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 0 1em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  outline: none;
+
+  &__arrow {
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid currentColor;
+  }
+
+  &:hover {
+    color: aquamarine;
+    font-size: 0.895rem;
+    border: 1px solid aquamarine;
+    background-color: lighten(#ff690f, 16.25%);
+  }
+
+  &:active {
+    background-color: darken(#ff690f, 6.25%);
+  }
+}
+
+.ob-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 119px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+}
+
+.ob-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  &__item {
+    position: relative;
+  }
+
+  &__item + &__item {
+    margin-left: 40px;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    transition: opacity 0.4s;
+    outline-color: yellowgreen;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.ob-hero {
+  position: relative;
+  min-height: calc(100vh - 119px);
+  height: 100vh;
+  width: 100%;
+  background-color: #2e5386;
+  background: url(../img/header_background.jpg) no-repeat;
+  background-size: cover;
+  padding: 15vh 0;
+  margin: 0 auto;
+  overflow: hidden;
+  // background-position: center;
+
+  &__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: rgba(254, 254, 254, 0.4);
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+
+    &-desc {
+      text-align: center;
+      font-family: "Catamaran", sans-serif;
+      text-transform: uppercase;
+      color: rgba(254, 254, 254, 0.4);
+      font-size: 245px;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 10%;
+      padding: 0;
+      line-height: 100%;
+
+      p {
+        margin: 0;
+        padding: 0;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 15;
+  }
+
+  &_desc {
+    display: block;
+    font-family: "Catamaran", sans-serif;
+    color: white;
+    font-size: 24px;
+    padding-right: 40%;
+    margin-bottom: 5%;
+  }
+
+  &__boarder {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    z-index: 10;
+    // width: 50vw;
+    // height: auto;
+    width: auto;
+    height: 62vh;
+  }
+
+  &__mountains {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    // width: 100%;
+    // height: 65%;
+    z-index: 5;
+    width: 100%;
+    height: 62vh;
+  }
+
+  &__heel {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+.ob-offer {
+  padding: 5% 0;
+  background-color: #f7f7f7;
+
+  // &__wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   align-items: center;
+  // }
+
+  &__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.75rem;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  &__desc {
+    display: block;
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.4);
+    font-size: 1.425rem;
+    line-height: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__cont-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    height: 100%;
+    width: auto;
+
+    &-wrapper {
+      height: 25vh;
+    }
+  }
+
+  &__span {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: rgba(7, 7, 7, 0.8);
+    font-size: 0.875rem;
+    margin-top: 2rem;
+  }
+
+  &__h3 {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0 15%;
+  }
+
+  &__btn {
+    width: 10rem;
+  }
+}
+
+.ob-photo {
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__img {
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    &:hover {
+      border: 1px solid #ff690f;
+    }
+  }
+}
+
+.ob-crew {
+  display: block;
+  min-height: 50vh;
+  height: auto;
+  padding: 5% 0;
+  background-color: #f7f7f7;
+
+  &__title {
+    text-align: center;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.75rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    height: auto;
+  }
+
+  &__cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    height: auto;
+
+    &-img-wrap {
+      border-radius: 50%;
+      width: auto;
+    height: 15rem;
+      // overflow: hidden;
+      transition: 0.8s;
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background-color: rgb(173, 164, 164);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: auto;
+    height: 15rem;
+    object-fit: cover;
+
+    &:hover {
+      border: 6px solid #ff690f;
+    }
+  }
+
+  &__span {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: rgba(7, 7, 7, 0.8);
+    font-size: 0.875rem;
+  }
+
+  &__name {
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(7, 7, 7, 0.9);
+    font-size: 1.5rem;
+  }
+}
+
+.ob-mountain {
+  min-height: 100vh;
+  background-color: #76a4e6;
+  background: url(../img/maontane_bc.jpg) no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &__cont {
+    padding: 14% 30% 15% 0;
+  }
+
+  &__title {
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold;
+    line-height: 4.75rem;
+  }
+
+  &__descr {
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.9);
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%;
+  }
+
+  &__count {
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+    color: #ff660d;
+    font-weight: 700;
+
+    &-descr {
+      display: block;
+      text-align: left;
+      font-size: 1.125rem;
+      color: black;
+    }
+  }
+}
+
+.ob-testemotional {
+  overflow: hidden;
+  min-height: 70vh;
+  padding: 5% 0;
+  margin: 0;
+  text-align: center;
+  margin: auto;
+  background-color: #f7f7f7;
+
+  &__title {
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold;
+  }
+
+  &__wrapper {
+    width: 100wh;
+  }
+
+  &__img-wrapper {
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  &__name {
+    display: block;
+    padding: 1% 30%;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    display: block;
+    padding: 1% 25%;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    color: rgba(54, 50, 50, 0.9);
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+}
+
+// Slick slider
+.slick-dots li button:before {
+  opacity: 0.2;
+  font-size: 1.2rem;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 7.75;
+  font-size: 1.2rem;
+  color: #ff660d;
+}
+
+.slick-dots {
+  bottom: 10%;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.ob-footer {
+  display: flex;
+  overflow: hidden;
+  background-color: #2f2f2f;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3rem 6rem;
+  }
+
+  &__title {
+    color: white;
+    font-family: "Catamaran", sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__info {
+    &-section {
+      .far,
+      .fas {
+        color: #ff660d;
+        font-size: 1.125rem;
+        width: 2rem;
+      }
+
+      span {
+        font-family: "Muli", sans-serif;
+        font-weight: 400;
+        color: rgb(247, 247, 247);
+        font-size: 1.125rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  &__social {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+
+    &-link {
+      color: #ff660d;
+      font-size: 2.125rem;
+      // width: 2rem;
+    }
+  }
+
+  &__map {
+    background-color: #fff;
+    flex-grow: 1;
+    height: 40rem;
+  }
+}

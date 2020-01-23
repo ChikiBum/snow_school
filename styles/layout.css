@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0px; }
+
+.container2 {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0px; }
+
+/* Ba-grid  */
+.ob-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-right: 0px; }
+
+.ob-row + .ob-row {
+  margin-top: 1rem; }
+
+[class^="ba-col"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
+
+.ob-col-1 {
+  width: 8.33333%; }
+
+.ob-col-2 {
+  width: 16.66667%; }
+
+.ob-col-3 {
+  width: 25%; }
+
+.ob-col-4 {
+  width: 33.33333%; }
+
+.ob-col-5 {
+  width: 41.66667%; }
+
+.ob-col-6 {
+  width: 50%; }
+
+.ob-col-7 {
+  width: 58.33333%; }
+
+.ob-col-8 {
+  width: 66.66667%; }
+
+.ob-col-9 {
+  width: 75%; }
+
+.ob-col-10 {
+  width: 83.33333%; }
+
+.ob-col-11 {
+  width: 91.66667%; }
+
+.ob-col-12 {
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .ob-col-sm-12 {
+    width: 100%; }
+  .ob-col-sm-11 {
+    width: 91.66%; }
+  .ob-col-sm-10 {
+    width: 83.3%; }
+  .ob-col-sm-9 {
+    width: 74.97%; }
+  .ob-col-sm-8 {
+    width: 66.62%; }
+  .ob-col-sm-7 {
+    width: 58.3%; }
+  .ob-col-sm-6 {
+    width: 50%; }
+  .ob-col-sm-5 {
+    width: 41.65%; }
+  .ob-col-sm-4 {
+    width: 33.3%; }
+  .ob-col-sm-3 {
+    width: 24.98%; }
+  .ob-col-sm-2 {
+    width: 16.66%; }
+  .ob-col-sm-1 {
+    width: 8.33%; } }
+
+@media screen and (min-width: 991px) {
+  .ob-col-md-12 {
+    width: 100%; }
+  .ob-col-md-11 {
+    width: 91.66%; }
+  .ob-col-md-10 {
+    width: 83.3%; }
+  .ob-col-md-9 {
+    width: 74.97%; }
+  .ob-col-md-8 {
+    width: 66.62%; }
+  .ob-col-sm-7 {
+    width: 58.3%; }
+  .ob-col-md-6 {
+    width: 50%; }
+  .ob-col-md-5 {
+    width: 41.65%; }
+  .ob-col-md-4 {
+    width: 33.3%; }
+  .ob-col-md-3 {
+    width: 24.98%; }
+  .ob-col-md-2 {
+    width: 16.66%; }
+  .ob-col-md-1 {
+    width: 8.33%; }
+  .hidden-md {
+    display: none !important; } }
+
+@media screen and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important; } }
+
+/* ba-common */
+.ob-text-center {
+  text-align: center; }
+
+.ob-text-left {
+  text-align: left; }
+
+.ob-text-right {
+  text-align: right; }
+
+.ob-text-justify {
+  text-align: justify; }
