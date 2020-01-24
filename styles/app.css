@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box; }
 
@@ -135,9 +136,22 @@
 .ob-text-justify {
   text-align: justify; }
 
+.visually-hidden {
+  position: absolute;
+  left: -9999999px;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
+
 body {
   font-family: "Muli", sans-serif;
   position: relative; }
+
+@media screen and (max-width: 1024px) {
+  .container2 {
+    padding: 0 5%; } }
 
 .ob-btn {
   display: inline-flex;
@@ -164,6 +178,15 @@ body {
     background-color: #ff9d62; }
   .ob-btn:active {
     background-color: #ee5900; }
+  @media screen and (max-width: 1024px) {
+    .ob-btn {
+      height: 2.2rem;
+      width: 11.5rem;
+      border-radius: 0.6rem;
+      align-items: center;
+      font-size: 0.775rem;
+      padding: 0 1em;
+      letter-spacing: 0.05em; } }
 
 .ob-header {
   position: absolute;
@@ -178,6 +201,7 @@ body {
   .ob-header-wrapper {
     display: flex;
     justify-content: space-between;
+    padding: 0 5%;
     overflow: hidden; }
 
 .ob-menu {
@@ -187,7 +211,7 @@ body {
   .ob-menu__item {
     position: relative; }
   .ob-menu__item + .ob-menu__item {
-    margin-left: 40px; }
+    margin-left: 2.5rem; }
   .ob-menu__link {
     color: white;
     text-decoration: none;
@@ -197,6 +221,60 @@ body {
     outline-color: yellowgreen; }
     .ob-menu__link:hover {
       opacity: 0.75; }
+
+@media screen and (max-width: 1024px) {
+  #menuOpen {
+    opacity: 0; }
+    #menuOpen:checked ~ .ob-menu__btn > span {
+      transform: rotate(45deg); }
+    #menuOpen:checked ~ .ob-menu__btn > span::before {
+      top: 0;
+      transform: rotate(0); }
+    #menuOpen:checked ~ .ob-menu__btn > span::after {
+      top: 0;
+      transform: rotate(90deg); }
+    #menuOpen:checked ~ .ob-menu {
+      transform: translateX(0); }
+  .ob-menu {
+    position: fixed;
+    left: 0;
+    top: -17px;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #fff;
+    transform: translateX(-100%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 15px 30px 30px;
+    transition: transform 0.4s; }
+    .ob-menu__btn {
+      display: flex;
+      /* используем flex для центрирования содержимого */
+      align-items: center;
+      /* центрируем содержимое кнопки */
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      z-index: 5;
+      transition-duration: 0.25s; }
+      .ob-menu__btn > span,
+      .ob-menu__btn > span::before,
+      .ob-menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: rgba(255, 105, 15, 0.7);
+        transition-duration: 0.25s; }
+      .ob-menu__btn > span::before {
+        content: "";
+        top: -15px; }
+      .ob-menu__btn > span::after {
+        content: "";
+        top: 15px; } }
 
 .ob-hero {
   position: relative;
@@ -222,7 +300,7 @@ body {
       font-family: "Catamaran", sans-serif;
       text-transform: uppercase;
       color: rgba(254, 254, 254, 0.4);
-      font-size: 245px;
+      font-size: 15.3125rem;
       font-weight: bold;
       margin: 0;
       margin-bottom: 10%;
@@ -232,6 +310,10 @@ body {
         margin: 0;
         padding: 0;
         line-height: 100%; }
+      @media screen and (max-width: 1024px) {
+        .ob-hero__title-desc {
+          font-size: 9.5rem;
+          margin-bottom: 5%; } }
   .ob-hero__wrapper {
     position: relative;
     z-index: 15; }
@@ -242,6 +324,11 @@ body {
     font-size: 24px;
     padding-right: 40%;
     margin-bottom: 5%; }
+    @media screen and (max-width: 1024px) {
+      .ob-hero_desc {
+        padding-right: 50%;
+        padding-top: 5%;
+        margin-bottom: 9%; } }
   .ob-hero__boarder {
     position: absolute;
     bottom: 0%;
@@ -249,6 +336,10 @@ body {
     z-index: 10;
     width: auto;
     height: 62vh; }
+    @media screen and (max-width: 1024px) {
+      .ob-hero__boarder {
+        right: -10%;
+        height: 58vh; } }
   .ob-hero__mountains {
     position: absolute;
     bottom: 0%;
@@ -356,6 +447,9 @@ body {
     align-items: center;
     min-height: 50vh;
     height: auto; }
+    @media screen and (max-width: 1024px) {
+      .ob-crew__cont {
+        flex-basis: 50%; } }
     .ob-crew__cont-img-wrap {
       border-radius: 50%;
       width: auto;
@@ -392,25 +486,43 @@ body {
   background: url(../img/maontane_bc.jpg) no-repeat;
   background-size: cover;
   overflow: hidden; }
+  @media screen and (max-width: 1024px) {
+    .ob-mountain {
+      min-height: 80vh; } }
   .ob-mountain__cont {
     padding: 14% 30% 15% 0; }
+    @media screen and (max-width: 1024px) {
+      .ob-mountain__cont {
+        padding: 0 5%; } }
   .ob-mountain__title {
     font-family: "Catamaran", sans-serif;
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: bold;
     line-height: 4.75rem; }
+    @media screen and (max-width: 1024px) {
+      .ob-mountain__title {
+        font-size: 2.75rem;
+        line-height: 3.75rem; } }
   .ob-mountain__descr {
     font-family: "Muli", sans-serif;
     font-weight: bold;
     color: rgba(54, 50, 50, 0.9);
     font-size: 1.125rem;
     line-height: 2rem; }
+    @media screen and (max-width: 1024px) {
+      .ob-mountain__descr p {
+        font-size: 1.025rem;
+        line-height: 1.3rem;
+        padding-right: 35%; } }
   .ob-mountain__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 10%; }
+    @media screen and (max-width: 1024px) {
+      .ob-mountain__wrapper {
+        padding-right: 38%; } }
   .ob-mountain__count {
     display: block;
     text-align: left;
@@ -425,7 +537,7 @@ body {
 
 .ob-testemotional {
   overflow: hidden;
-  min-height: 70vh;
+  min-height: 100vh;
   padding: 5% 0;
   margin: 0;
   text-align: center;
@@ -468,7 +580,7 @@ body {
   color: #ff660d; }
 
 .slick-dots {
-  bottom: 10%; }
+  bottom: 15%; }
 
 .slick-dotted.slick-slider {
   margin-bottom: 0; }
@@ -477,12 +589,20 @@ body {
   display: flex;
   overflow: hidden;
   background-color: #2f2f2f; }
+  @media screen and (max-width: 1024px) {
+    .ob-footer {
+      flex-wrap: wrap; } }
   .ob-footer__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     padding: 3rem 6rem; }
+    @media screen and (max-width: 1024px) {
+      .ob-footer__wrapper {
+        flex-basis: 100%;
+        height: 50vh;
+        padding-left: 30%; } }
   .ob-footer__title {
     color: white;
     font-family: "Catamaran", sans-serif;
@@ -508,7 +628,14 @@ body {
     .ob-footer__social-link {
       color: #ff660d;
       font-size: 2.125rem; }
+  .ob-footer .ob-map {
+    height: 100%;
+    width: auto; }
   .ob-footer__map {
     background-color: #fff;
     flex-grow: 1;
     height: 40rem; }
+    @media screen and (max-width: 1024px) {
+      .ob-footer__map {
+        flex-basis: 100%;
+        height: 50vh; } }
