@@ -7,6 +7,10 @@ body {
   .container2 {
     padding: 0 5%; } }
 
+@media screen and (max-width: 1281px) {
+  .container2 {
+    padding: 0 5%; } }
+
 .ob-btn {
   display: inline-flex;
   background-color: #ff690f;
@@ -30,8 +34,20 @@ body {
     font-size: 0.895rem;
     border: 1px solid aquamarine;
     background-color: #ff9d62; }
+    @media screen and (max-width: 1281px) {
+      .ob-btn:hover {
+        font-size: 0.795rem; } }
   .ob-btn:active {
     background-color: #ee5900; }
+  @media screen and (max-width: 1281px) {
+    .ob-btn {
+      height: 2.2rem;
+      width: 11.5rem;
+      border-radius: 0.6rem;
+      align-items: center;
+      font-size: 0.775rem;
+      padding: 0 1em;
+      letter-spacing: 0.05em; } }
   @media screen and (max-width: 1024px) {
     .ob-btn {
       height: 2.2rem;
@@ -43,7 +59,7 @@ body {
       letter-spacing: 0.05em; } }
 
 .ob-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -71,10 +87,23 @@ body {
     text-decoration: none;
     font-size: 0.875rem;
     text-transform: capitalize;
-    transition: opacity 0.4s;
+    transition: 0.4s;
     outline-color: yellowgreen; }
+    @media screen and (max-width: 1280px) {
+      .ob-menu__link {
+        font-size: 0.875rem; } }
+    @media screen and (max-width: 1024px) {
+      .ob-menu__link {
+        display: block;
+        font-size: 4.875rem;
+        font-weight: 700;
+        color: #ff690f;
+        text-transform: uppercase;
+        width: 100%; }
+        .ob-menu__link:hover {
+          background-color: solid rgba(255, 255, 255, 0.21) 2px; } }
     .ob-menu__link:hover {
-      opacity: 0.75; }
+      border-bottom: solid rgba(255, 255, 255, 0.21) 2px; }
 
 @media screen and (max-width: 1024px) {
   #menuOpen {
@@ -101,6 +130,20 @@ body {
     align-items: flex-start;
     padding: 30px 15px 30px 30px;
     transition: transform 0.4s; }
+    .ob-menu__item + .ob-menu__item {
+      margin-left: 0; }
+    .ob-menu_onClick {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-color: #2e5386;
+      background: url(../img/header_background.jpg) no-repeat;
+      background-size: cover; }
+    .ob-menu-item_onClick {
+      width: 100%;
+      text-align: left; }
+    .ob-menu-item_hover {
+      background-color: rgba(255, 105, 15, 0.2); }
     .ob-menu__btn {
       display: flex;
       /* используем flex для центрирования содержимого */
@@ -149,6 +192,12 @@ body {
     font-size: 30px;
     margin: 0;
     padding: 0; }
+    @media screen and (max-width: 1280px) {
+      .ob-hero__title {
+        font-size: 24px; } }
+    @media screen and (max-width: 768px) {
+      .ob-hero__title {
+        font-size: 24px; } }
     .ob-hero__title-desc {
       text-align: center;
       font-family: "Catamaran", sans-serif;
@@ -164,10 +213,18 @@ body {
         margin: 0;
         padding: 0;
         line-height: 100%; }
+      @media screen and (max-width: 1281px) {
+        .ob-hero__title-desc {
+          font-size: 11.5rem;
+          margin-bottom: 4%; } }
       @media screen and (max-width: 1024px) {
         .ob-hero__title-desc {
           font-size: 9.5rem;
           margin-bottom: 5%; } }
+      @media screen and (max-width: 768px) {
+        .ob-hero__title-desc {
+          font-size: 8.5rem;
+          margin-bottom: 0; } }
   .ob-hero__wrapper {
     position: relative;
     z-index: 15; }
@@ -175,14 +232,24 @@ body {
     display: block;
     font-family: "Catamaran", sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     padding-right: 40%;
     margin-bottom: 5%; }
+    @media screen and (max-width: 1281px) {
+      .ob-hero_desc {
+        padding-right: 50%;
+        margin-bottom: 6%; } }
     @media screen and (max-width: 1024px) {
       .ob-hero_desc {
         padding-right: 50%;
         padding-top: 5%;
         margin-bottom: 9%; } }
+    @media screen and (max-width: 768px) {
+      .ob-hero_desc {
+        font-size: 1.375rem;
+        padding-right: 50%;
+        padding-top: 5%;
+        margin-bottom: 3%; } }
   .ob-hero__boarder {
     position: absolute;
     bottom: 0%;
@@ -190,6 +257,11 @@ body {
     z-index: 10;
     width: auto;
     height: 62vh; }
+    @media screen and (max-width: 1281px) {
+      .ob-hero__boarder {
+        right: -1%;
+        bottom: -8%;
+        height: 65vh; } }
     @media screen and (max-width: 1024px) {
       .ob-hero__boarder {
         right: -10%;
@@ -343,6 +415,9 @@ body {
   @media screen and (max-width: 1024px) {
     .ob-mountain {
       min-height: 80vh; } }
+  @media screen and (max-width: 768px) {
+    .ob-mountain {
+      overflow: auto; } }
   .ob-mountain__cont {
     padding: 14% 30% 15% 0; }
     @media screen and (max-width: 1024px) {
@@ -358,6 +433,10 @@ body {
       .ob-mountain__title {
         font-size: 2.75rem;
         line-height: 3.75rem; } }
+    @media screen and (max-width: 768px) {
+      .ob-mountain__title {
+        margin: 0;
+        margin-top: 1rem; } }
   .ob-mountain__descr {
     font-family: "Muli", sans-serif;
     font-weight: bold;
@@ -377,6 +456,10 @@ body {
     @media screen and (max-width: 1024px) {
       .ob-mountain__wrapper {
         padding-right: 38%; } }
+    @media screen and (max-width: 768px) {
+      .ob-mountain__wrapper {
+        padding-top: 5%;
+        padding-bottom: 5%; } }
   .ob-mountain__count {
     display: block;
     text-align: left;
@@ -397,6 +480,15 @@ body {
   text-align: center;
   margin: auto;
   background-color: #f7f7f7; }
+  @media screen and (max-width: 1280px) {
+    .ob-testemotional {
+      min-height: 140vh; } }
+  @media screen and (max-width: 1280px) {
+    .ob-testemotional {
+      min-height: 110vh; } }
+  @media screen and (max-width: 768px) {
+    .ob-testemotional {
+      min-height: 110vh; } }
   .ob-testemotional__title {
     font-family: "Catamaran", sans-serif;
     text-transform: uppercase;
@@ -479,6 +571,10 @@ body {
     width: 25%;
     display: flex;
     justify-content: space-between; }
+    @media screen and (max-width: 1024px) {
+      .ob-footer__social {
+        width: 61%;
+        margin-top: 1rem; } }
     .ob-footer__social-link {
       color: #ff660d;
       font-size: 2.125rem; }
