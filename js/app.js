@@ -1,9 +1,80 @@
+// function for counter 
+
+(function($){
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *       the user visible viewport of a web browser.
+     *       only accounts for vertical position, not horizontal.
+     */
+    var $w = $(window);
+    $.fn.visible = function(partial,hidden,direction){
+
+        if (this.length < 1)
+            return;
+
+        var $t        = this.length > 1 ? this.eq(0) : this,
+            t         = $t.get(0),
+            vpWidth   = $w.width(),
+            vpHeight  = $w.height(),
+            direction = (direction) ? direction : 'both',
+            clientSize = hidden === true ? t.offsetWidth * t.offsetHeight : true;
+
+        if (typeof t.getBoundingClientRect === 'function'){
+
+            // Use this native browser method, if available.
+            var rec = t.getBoundingClientRect(),
+                tViz = rec.top    >= 0 && rec.top    <  vpHeight,
+                bViz = rec.bottom >  0 && rec.bottom <= vpHeight,
+                lViz = rec.left   >= 0 && rec.left   <  vpWidth,
+                rViz = rec.right  >  0 && rec.right  <= vpWidth,
+                vVisible   = partial ? tViz || bViz : tViz && bViz,
+                hVisible   = partial ? lViz || rViz : lViz && rViz;
+
+            if(direction === 'both')
+                return clientSize && vVisible && hVisible;
+            else if(direction === 'vertical')
+                return clientSize && vVisible;
+            else if(direction === 'horizontal')
+                return clientSize && hVisible;
+        } else {
+
+            var viewTop         = $w.scrollTop(),
+                viewBottom      = viewTop + vpHeight,
+                viewLeft        = $w.scrollLeft(),
+                viewRight       = viewLeft + vpWidth,
+                offset          = $t.offset(),
+                _top            = offset.top,
+                _bottom         = _top + $t.height(),
+                _left           = offset.left,
+                _right          = _left + $t.width(),
+                compareTop      = partial === true ? _bottom : _top,
+                compareBottom   = partial === true ? _top : _bottom,
+                compareLeft     = partial === true ? _right : _left,
+                compareRight    = partial === true ? _left : _right;
+
+            if(direction === 'both')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+            else if(direction === 'vertical')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+            else if(direction === 'horizontal')
+                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+        }
+    };
+
+})(jQuery);
+
 'use strict';
 
 $(document).ready(function () {
 
 
-    alert('Разрешение экрана: <b>' + screen.width + '×' + screen.height + 'px.</b>');
+    // alert('Разрешение экрана: <b>' + screen.width + '×' + screen.height + 'px.</b>');
 
     new WOW().init();
 
@@ -35,10 +106,7 @@ $(document).ready(function () {
     });
 
     // color line mobile menu
-    // $('#elm').hover(
-    //     function(){ $(this).addClass('ob-menu-item_hover') },
-    //     function(){ $(this).removeClass('ob-menu-item_hover')}
-    //     );
+
 
     $('.ob-menu__item').mouseover(function () {
         $(this).addClass('ob-menu-item_hover');
@@ -47,46 +115,7 @@ $(document).ready(function () {
         $(this).removeClass('ob-menu-item_hover');
     });
 
-    //Открыть.закрыть меню по кнопке
-    // $('.ba-menu-btn').on('click', function () {
-    //     let menu = $('.ba-menu');
-
-    //     if (menu.hasClass('open')) {
-    //         menu.removeClass('open').hide();
-    //     }
-    //     else {
-    //         menu.addClass('open').show();
-    //     }
-
-    // })
-
-    //Проверяем ширину єкрана, чтобы открыть меню, когда ширина больше 991 пкс
-    // $(window).on('resize', function () {
-    //     if ($(this).width() > 991) {
-    //         $('.ba-menu').addClass('open').show();
-    //     }
-    //     else {
-    //         $('.ba-menu').removeClass('open').hide();
-    //     }
-    // });
-
-
-    // Show search button on mobile 
-    // $('#showSearch').on('click', function () {
-    //     let searchForm = $('.ba-search-form');
-    //     searchForm.toggleClass('open');
-    // });
-
-
-    // $('.ba-tabs__btn').on('click', function () {
-    //     $('.ba-tabs__btn.active').removeClass('active');
-    //     $('.ba-tabs-panel.active').removeClass('active');
-
-    //     const tabIndex = $(this).attr('data-tab');
-
-    //     $(this).addClass('active');
-    //     $('[data-tab-index=' + tabIndex + ']').addClass('active');
-    // });
+   
 
 
     //    Slider
@@ -157,29 +186,297 @@ $(document).ready(function () {
     });
 
 
+    // counter
+    var set_counter;
+    set_counter = function() {
+        if ($('[data-counter]').length) {
+          return $('[data-counter]').each(function() {
+            var count, text, that, time;
+            that = $(this);
+            count = that.attr('data-counter');
+            text = that.text();
+            time = parseInt(that.attr('data-counter-time')) || 4000;
+            if (that.visible()) {
+              return that.prop('Counter', 0).animate({
+                Counter: count
+              }, {
+                duration: time,
+                easing: 'swing',
+                step: function(now) {
+                  if (now < count) {
+                    return that.text(Math.ceil(now));
+                  }
+                }
+              });
+            }
+          });
+        }
+      };
+      
+      $(window).on('scroll load', function() {
+        var button_up, scroll;
+        scroll = $(window).scrollTop();
+        set_counter();
+      });    
+
 
 });
 
+// google map
 
 var map;
 function initMap() {
 
-    let kharkivOffice = { lat: 40.700930, lng: -73.983728 };
-    console.log('heloo map');
+    // let Office = { lat: 40.700930, lng: -73.983728 };
+    let Office = { lat: 47.299076, lng: 25.754433 };
+    // console.log('heloo map');
 
     map = new google.maps.Map(document.getElementById('map'), {
-        center: kharkivOffice,
+        center: Office,
         zoom: 12
     });
 
     var marker = new google.maps.Marker({
-        position: kharkivOffice,
+        position: Office,
         map: map,
         icon: {
-            url: 'img/pin.png',
+            // url: 'img/pin.png',
+            url: 'snowboard.png',
             origin: new google.maps.Point(0, 0),
             size: new google.maps.Size(160, 160)
         }
     });
+
+
+    var styles = [
+        {
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#f5f5f5"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#616161"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#f5f5f5"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#bdbdbd"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.neighborhood",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#eeeeee"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#757575"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.business",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#e5e5e5"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#757575"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#dadada"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#616161"
+            }
+          ]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        },
+        {
+          "featureType": "transit",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#e5e5e5"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#eeeeee"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#c9c9c9"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        }
+      ]
+
+    map.setOptions({styles: styles});
 
 }

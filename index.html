@@ -116,7 +116,7 @@
         <!-- !!!!!!!!! What OFFER -->
         <section class="ob-offer" id='offer'>
             <div class="container2 ob-offer__wrapper">
-                <h2 class="ob-offer__title">
+                <h2 class="ob-offer__title wow fadeOut" data-wow-delay=".1s">
                     WHAT WE OFFER
                 </h2>
                 <span class="ob-offer__desc">
@@ -128,8 +128,8 @@
                 <div class="ob-row">
                     <!-- fist comtent block -->
                     <div class="ob-col-4">
-                        <div class="ob-offer__cont-wrapper">
-                            <div class="ob-offer__img-wrapper">
+                        <div class="ob-offer__cont-wrapper wow flipInX" data-wow-delay=".51s">
+                            <div class="ob-offer__img-wrapper ">
                                 <img src="img/offer_ski.png" alt="offer_ski" class='ob-offer__img'>
                             </div>
                             <span class="ob-offer__span">NEW TO SKIING?</span>
@@ -150,7 +150,7 @@
                     <!-- second comtent block -->
 
                     <div class="ob-col-4">
-                        <div class="ob-offer__cont-wrapper">
+                        <div class="ob-offer__cont-wrapper wow flipInX" data-wow-delay=".31s">
                             <div class="ob-offer__img-wrapper">
                                 <img src="img/offer_group.png" alt="offer_group" class='ob-offer__img'>
                             </div>
@@ -171,7 +171,7 @@
 
                     <!-- third comtent block -->
                     <div class="ob-col-4">
-                        <div class="ob-offer__cont-wrapper">
+                        <div class="ob-offer__cont-wrapper wow flipInX" data-wow-delay=".11s">
                             <div class="ob-offer__img-wrapper">
                                 <img src="img/offer_snowboard.png" alt="offer_snowboard" class='ob-offer__img'>
                             </div>
@@ -319,21 +319,24 @@
                     </p>
                 </span>
                 <div class="ob-mountain__wrapper">
-                    <div class="ob-mountain__count  wow bounceInUp" data-wow-delay="1s">
-                        1600 </br>
+                    <!-- <div class="ob-mountain__count  wow bounceInUp" data-wow-delay="1s"> -->
+                        <div class="ob-mountain__count">
+                        <span data-counter="1415">1415</span> 
                         <span class="ob-mountain__count-descr">
                             HAPPY CLIENTS </span>
                     </div>
                     <!-- animate with animate css 
                         <div class="ob-mountain__count animated bounceInUp delay-1.5s"> -->
-                    <div class="ob-mountain__count wow bounceInUp" data-wow-delay=".8s">
-                        18</br>
+                    <!-- <div class="ob-mountain__count wow bounceInUp" data-wow-delay=".8s"> -->
+                        <div class="ob-mountain__count">
+                        <span data-counter="18">18</span>
                         <span class="ob-mountain__count-descr">
                             PROFESSIONAL AWARDS
                         </span>
                     </div>
-                    <div class="ob-mountain__count wow bounceInUp" data-wow-delay="1.2s">
-                        213</br>
+                    <!-- <div class="ob-mountain__count wow bounceInUp" data-wow-delay="1.2s"> -->
+                        <div class="ob-mountain__count">
+                        <span data-counter="213">213</span>
                         <span class="ob-mountain__count-descr">
                             REACHED TOPS
                         </span>
@@ -430,13 +433,17 @@
             </h3>
             <div class="ob-footer__info">
                 <div class="ob-footer__info-section">
-                    <i class="fas fa-phone-volume"></i> <span>+43 662 123456</span>
+                    <i class="fas fa-phone-volume"></i> 
+                    <a href="tel:+43 662 123456">+43 662 123456</a>
+                    <!-- <span>+43 662 123456</span> -->
                 </div>
                 <div class="ob-footer__info-section">
                     <i class="fas fa-map-marker-alt"></i> <span>Paracelsusstraße 26, 5020 Salzburg, Austria</span>
                 </div>
                 <div class="ob-footer__info-section">
-                    <i class="far fa-envelope"></i> <span>INBOX@MOUNTain.COM</span>
+                    <i class="far fa-envelope"></i> 
+                    <!-- <span>INBOX@MOUNTain.COM</span> -->
+                    <a href = "mailto: INBOX@MOUNTain.COM">INBOX@MOUNTain.COM</a>
                 </div>
                 <div class="ob-footer__info-section">
                     <i class="fas fa-clock"></i> <span>OPEN HOURS: 8.00 AM – 10.00 PM MONDAY - SUNDAY</span>

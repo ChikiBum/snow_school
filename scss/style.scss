@@ -13,6 +13,16 @@ body {
   }
 }
 
+.cloud {
+  @media screen and (max-width: 768px) { 
+      height: 443px !important;
+    }
+}
+
+a {
+  text-decoration: none;
+}
+
 .ob-btn {
   display: inline-flex;
   background-color: #ff690f;
@@ -36,13 +46,11 @@ body {
 
   &:hover {
     color: aquamarine;
-    font-size: 0.895rem;
+    // font-size: 0.895rem;
     border: 1px solid aquamarine;
     background-color: lighten(#ff690f, 16.25%);
 
-    @media screen and (max-width: 1281px) {
-      font-size: 0.795rem;
-    }
+   
   }
 
   &:active {
@@ -102,6 +110,10 @@ body {
 
   &__item + &__item {
     margin-left: 2.5rem;
+    @media screen and (max-width: 1280px) {
+      margin-left: 2rem;
+    }
+
   }
 
   &__link {
@@ -113,7 +125,7 @@ body {
     outline-color: yellowgreen;
 
     @media screen and (max-width: 1280px) {
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
 
 
@@ -132,6 +144,8 @@ body {
 
     &:hover {
       border-bottom: solid rgba(255, 255, 255, 0.21) 2px;
+      // text-shadow: 1px 1px 1px aquamarine, 1px 1px 1rem orange;
+      text-shadow: 0px 0px 2px aquamarine, 0 0 1em orange;
     }
   }
 }
@@ -208,6 +222,11 @@ body {
       z-index: 5;
       transition-duration: 0.25s;
 
+      @media screen and (max-width: 768px) { 
+        right: 70px;
+      }
+      
+
       & > span,
       & > span::before,
       & > span::after {
@@ -255,7 +274,7 @@ body {
     padding: 0;
 
     @media screen and (max-width: 1280px) {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     @media screen and (max-width: 768px) {
@@ -267,12 +286,14 @@ body {
       font-family: "Catamaran", sans-serif;
       text-transform: uppercase;
       color: rgba(254, 254, 254, 0.4);
+      // text-shadow: 0px 0px 2px aquamarine, 0 0 1em orange;
       font-size: 15.3125rem;
       font-weight: bold;
       margin: 0;
       margin-bottom: 10%;
       padding: 0;
       line-height: 100%;
+      animation: radial-pulse 20s infinite;
 
       p {
         margin: 0;
@@ -280,15 +301,15 @@ body {
         line-height: 100%;
       }
 
-      @media screen and (max-width: 1281px) {
+      @media screen and (max-width: 1280px) {
         // display: none;
-        font-size: 11.5rem;
+        font-size: 10rem;
         margin-bottom: 4%;
       }
 
       @media screen and (max-width: 1024px) {
         // display: none;
-        font-size: 9.5rem;
+        font-size: 11.5rem;
         margin-bottom: 5%;
       }
 
@@ -298,6 +319,7 @@ body {
         margin-bottom: 0;
       }
     }
+    
   }
 
   &__wrapper {
@@ -313,10 +335,11 @@ body {
     padding-right: 40%;
     margin-bottom: 5%;
 
-    @media screen and (max-width: 1281px) {
-      // display: none;
+    @media screen and (max-width: 1280px) {
+      font-size: 1.5rem;
       padding-right: 50%;
-      margin-bottom: 6%;
+      margin-bottom: 4%;
+      
     }
 
     @media screen and (max-width: 1024px) {
@@ -327,10 +350,11 @@ body {
     }
 
     @media screen and (max-width: 768px) {
-      font-size: 1.375rem;
-      padding-right: 50%;
-      padding-top: 5%;
-      margin-bottom: 3%;
+      font-size: 2rem;
+      padding-right: 0;
+      padding-top: 65%;
+      margin-bottom: 1rem;
+      text-align: center;
     }
   }
 
@@ -354,6 +378,11 @@ body {
       right: -10%;
       height: 58vh;
     }
+
+
+    @media screen and (max-width: 768px) {
+       bottom: 12%;
+    }
   }
 
   &__mountains {
@@ -374,6 +403,38 @@ body {
     width: 100%;
     z-index: 5;
   }
+
+  &_btn{
+    @media screen and (max-width: 768px) {
+      margin-left: 27%;
+      height: 4.2rem;
+      width: 20rem;
+      font-size: 1.475rem;
+    }
+  }
+}
+
+@keyframes radial-pulse {
+  0% {
+    text-shadow: none;
+    }
+  25% {
+    // text-shadow: 0px 0px 1px aquamarine, 0 0 .5em orange;
+    text-shadow: 1px 1px 1px #ff690f, 0 0 .5em white;
+    }
+ 
+  50% {
+    text-shadow: 1px 1px 2px #ff690f, 0 0 1em white;
+  }
+
+  75% {
+    // text-shadow: 0px 0px 1px aquamarine, 0 0 .5em orange;
+    text-shadow: 1px 1px 1px #ff690f, 0 0 .5em white;
+    }
+
+    100% {
+      text-shadow: none;
+      }
 }
 
 .ob-offer {
@@ -421,6 +482,11 @@ body {
 
     &-wrapper {
       height: 25vh;
+
+        @media screen and (max-width: 768px) {
+          height: 16vh;
+
+      }
     }
   }
 
@@ -496,6 +562,8 @@ body {
     align-items: center;
     min-height: 50vh;
     height: auto;
+
+    
   }
 
   &__cont {
@@ -505,6 +573,11 @@ body {
     align-items: center;
     min-height: 50vh;
     height: auto;
+
+    @media screen and (max-width: 768px) {
+      min-height: 34vh;
+      margin-bottom: 2rem;
+    }
 
     @media screen and (max-width: 1024px) {
       // display: none;
@@ -517,6 +590,10 @@ body {
       height: 15rem;
       // overflow: hidden;
       transition: 0.8s;
+
+      @media screen and (max-width: 1280px) {
+        margin-bottom: 1rem;
+      }
 
       &:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -532,7 +609,8 @@ body {
     object-fit: cover;
 
     &:hover {
-      border: 6px solid #ff690f;
+      border-radius: 50%;
+      border: .5px solid #ff690f;
     }
   }
 
@@ -568,12 +646,13 @@ body {
 
   @media screen and (max-width: 768px) {
     overflow: auto;
+    min-height: 48vh;
   }
 
   &__cont {
     padding: 14% 30% 15% 0;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1280px) {
       padding: 0 5%;
     }
   }
@@ -584,6 +663,12 @@ body {
     font-size: 3.75rem;
     font-weight: bold;
     line-height: 4.75rem;
+
+    @media screen and (max-width: 1280px) {
+      padding-top: 2%;
+      font-size: 2.75rem;
+      line-height: 3.75rem;
+    }
 
     @media screen and (max-width: 1024px) {
       font-size: 2.75rem;
@@ -603,6 +688,14 @@ body {
     line-height: 2rem;
 
     p {
+
+
+      @media screen and (max-width: 1280px) {
+        font-size: 1.025rem;
+        line-height: 1.3rem;
+        padding-right: 35%;
+      }
+
       @media screen and (max-width: 1024px) {
         font-size: 1.025rem;
         line-height: 1.3rem;
@@ -617,9 +710,14 @@ body {
     align-items: center;
     padding-top: 10%;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1280px) {
+      padding-top: 3%;
       padding-right: 38%;
     }
+
+    // @media screen and (max-width: 1024px) {
+    //   padding-right: 38%;
+    // }
 
     @media screen and (max-width: 768px) {
       padding-top: 5%;
@@ -652,22 +750,23 @@ body {
   margin: auto;
   background-color: #f7f7f7;
 
-  @media screen and (max-width: 1280px) {
-    min-height: 140vh;
-  }
-
-  @media screen and (max-width: 1280px) {
-    min-height: 110vh;
+   @media screen and (max-width: 1280px) {
+    min-height: 105vh;
   }
 
   @media screen and (max-width: 768px) {
-    min-height: 110vh;
+    min-height: 65vh;
   }
   &__title {
     font-family: "Catamaran", sans-serif;
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: bold;
+
+    @media screen and (max-width: 1280px) {
+     margin: 0 3rem;
+    }
+  
   }
 
   &__wrapper {
@@ -725,6 +824,7 @@ body {
   overflow: hidden;
   background-color: #2f2f2f;
 
+  
   @media screen and (max-width: 1024px) {
     flex-wrap: wrap;
   }
@@ -736,11 +836,22 @@ body {
     align-items: flex-start;
     padding: 3rem 6rem;
 
+    @media screen and (max-width: 1280px) {
+        flex-basis: 40%;
+       }
+
     @media screen and (max-width: 1024px) {
       flex-basis: 100%;
       height: 50vh;
       padding-left: 30%;
     }
+
+    @media screen and (max-width: 768px) {
+      flex-basis: 100%;
+      height: 34vh;
+      padding-left: 30%;
+    }
+
   }
 
   &__title {
@@ -750,9 +861,19 @@ body {
     font-size: 3.75rem;
     font-weight: bold;
     margin: 0;
+
+    @media screen and (max-width: 1280px) {
+      font-size: 2.75rem;
+    }
   }
 
   &__info {
+
+
+    @media screen and (max-width: 768px) {
+      width: 67%;
+    }
+
     &-section {
       .far,
       .fas {
@@ -760,8 +881,17 @@ body {
         font-size: 1.125rem;
         width: 2rem;
       }
+     
 
       span {
+        font-family: "Muli", sans-serif;
+        font-weight: 400;
+        color: rgb(247, 247, 247);
+        font-size: 1.125rem;
+        line-height: 2rem;
+      }
+
+      a {
         font-family: "Muli", sans-serif;
         font-weight: 400;
         color: rgb(247, 247, 247);
@@ -796,7 +926,14 @@ body {
     flex-grow: 1;
     height: 40rem;
 
+
     @media screen and (max-width: 1024px) {
+      flex-basis: 100%;
+      height: 50vh;
+    }
+
+    
+    @media screen and (max-width: 768px) {
       flex-basis: 100%;
       height: 50vh;
     }
