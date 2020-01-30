@@ -300,9 +300,10 @@ a {
   @media screen and (max-width: 768px) {
     .ob-hero_btn {
       margin-left: 27%;
-      height: 4.2rem;
+      height: 4rem;
       width: 20rem;
-      font-size: 1.475rem; } }
+      font-size: 1.475rem;
+      margin-bottom: 2rem; } }
 
 @keyframes radial-pulse {
   0% {

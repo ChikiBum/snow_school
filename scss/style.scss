@@ -407,9 +407,10 @@ a {
   &_btn{
     @media screen and (max-width: 768px) {
       margin-left: 27%;
-      height: 4.2rem;
+      height: 4rem;
       width: 20rem;
       font-size: 1.475rem;
+      margin-bottom: 2rem;
     }
   }
 }
